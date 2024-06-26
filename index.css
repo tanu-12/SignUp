@@ -1,0 +1,261 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    appearance: none;
+    outline: none;
+    -webkit-appearance: none;
+    overflow: auto;
+}
+
+input:required {
+    appearance: none;
+    outline: none;
+    -webkit-appearance: none;
+
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    overflow: auto;
+    font-size: 1rem;
+    width: 55%;
+}
+
+.ibm-plex-mono-regular {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+
+article {
+
+    text-align: left;
+
+    width: clamp (3rem,
+            1rem+7vh,
+            8rem);
+}
+
+input {
+
+    border: 2px solid #E5E7EB;
+    width: 15rem;
+}
+
+input:focus {
+
+
+    border: 2px solid lightblue;
+    box-shadow: 0px 10px 2px 0px #E5E7EB;
+}
+
+
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input+span {
+    position: relative;
+}
+
+/* input:invalid+span::before {
+    position: absolute;
+    content: "* this is required";
+    color: red;
+    top: 1.3rem;
+    left: -12.7rem;
+
+
+} */
+
+input[type="password"]:invalid+span::before {
+    position: absolute;
+    content: "* Password do not match";
+    color: red;
+    top: 1.5rem;
+    left: -15rem;
+    font-size: 0.75rem;
+
+
+}
+
+input[type="password"]:valid+span::before {
+    position: absolute;
+    content: " ";
+
+    top: 1.3rem;
+    left: -20.7rem;
+    right: 2rem;
+
+
+}
+
+
+
+.container>* {
+
+    height: 100vh;
+}
+
+.sidebar {
+    width: 45%;
+
+    background-size: cover;
+    /* background-position: center; */
+    background-image: url("background.jpg");
+    position: relative;
+}
+
+.logo {
+
+
+
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+
+
+    top: 10rem;
+
+
+    position: absolute;
+
+
+
+}
+
+.logo h1 {
+    text-align: center;
+    color: white;
+    opacity: 1;
+
+
+}
+
+
+
+.row {
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    gap: 3rem;
+    margin-top: 1.5rem;
+}
+
+ul {
+    /* border: 2px solid black; */
+    position: relative;
+    list-style: none;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    box-shadow: 0px 10px 3px 0px lightgrey;
+    background-color: white;
+    overflow: auto;
+}
+
+button {
+    margin: 2rem 0 1.5rem 0;
+    border: none;
+    padding: 0.5rem 1.5rem;
+
+    border-radius: 20px;
+    background-color: #596D48;
+}
+
+/*odin logo*/
+.odin-logo {
+    padding: 0.5rem;
+    height: 6rem;
+}
+
+.odin-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:600px) {
+
+    .flex {
+        flex-direction: column;
+    }
+}
