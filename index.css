@@ -286,7 +286,7 @@ button {
     margin: 2rem 0 1.5rem 0;
     border: none;
     padding: 0.5rem var(--padding);
-
+    color: white;
     border-radius: 20px;
     background-color: var(--button_color);
 }
